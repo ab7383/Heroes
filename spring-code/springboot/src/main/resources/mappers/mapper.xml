@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hero.springboot.mappers.HeroMapper">
+
+    <!--<resultMap type="com.hero.springboot.Hero.Hero" id="Heroes">-->
+        <!--<id column="id" property="id"/>-->
+        <!--<result column="name" property="name"/>-->
+    <!--</resultMap>-->
+
+    <select id="getHeroes" resultType="com.hero.springboot.Hero.Hero">
+        select * from user
+    </select>
+    <select id="getHero" parameterType="Integer" resultType="com.hero.springboot.Hero.Hero">
+        select * from user where id = #{id}
+    </select>
+    <update id="updateHero" parameterType="com.hero.springboot.Hero.Hero">
+        update user set name = #{name} where id = #{id}
+    </update>
+    <insert id="addHero" parameterType="com.hero.springboot.Hero.Hero">
+        insert into user(id,name)values(#{id},#{name})
+    </insert>
+    <delete id="deleteHero" parameterType="Integer">
+        delete from user where id =#{id}
+    </delete>
+
+</mapper>
