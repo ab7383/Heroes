@@ -1,16 +1,15 @@
 package com.hero.springboot.controller;
 import com.hero.springboot.Hero.Hero;
-import com.hero.springboot.dao.HeroDao;
 import com.hero.springboot.dao.imp.HeroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.websocket.server.PathParam;
-import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @CrossOrigin 解决跨域限制
+ */
 @RestController
 public class HeroController
 {
@@ -24,8 +23,7 @@ public class HeroController
     @GetMapping(path = "api/heroes")
     public List<Hero> getHeroes() throws Exception {
         logger.info("-------------------getHeroes--------------------");
-        List<Hero> Heroes = heroService.getHeroes();
-        return Heroes;
+        return heroService.getHeroes();
     }
 
     @CrossOrigin(origins = "*")
@@ -34,8 +32,7 @@ public class HeroController
     public Hero getHero(@PathVariable("id") Integer id) throws Exception {
         logger.info("-------------------getHero--------------------");
         logger.info("hero's id is: " + id);
-        Hero hero = heroService.getHero(id);
-        return hero;
+        return heroService.getHero(id);
     }
 
     @CrossOrigin(origins = "*")
