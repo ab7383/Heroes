@@ -14,7 +14,7 @@
         select * from user where id = #{id}
     </select>
     <update id="updateHero" parameterType="com.hero.springboot.Hero.Hero">
-        update user set name = #{name} where id = #{id}
+        update user set name = #{name} standName = #{standName} where id = #{id}
     </update>
     <insert id="addHero" parameterType="com.hero.springboot.Hero.Hero">
         insert into user(id,name)values(#{id},#{name})

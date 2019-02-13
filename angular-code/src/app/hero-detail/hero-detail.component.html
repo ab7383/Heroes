@@ -1,6 +1,15 @@
 <div *ngIf="hero">
     <h2>{{hero.name | uppercase}} Details</h2>
     <div><span>id: </span>{{hero.id}}</div>
+    <div><span>本体: </span>{{hero.name}}</div>
+    <div><span>替身: </span>{{hero.standName}}</div>
+    <div><span>力量: </span>{{hero.strength}}</div>
+    <div><span>速度: </span>{{hero.speed}}</div>
+    <div><span>射程: </span>{{hero.distance}}</div>
+    <div><span>成长性: </span>{{hero.growth}}</div>
+    <div><span>精密度: </span>{{hero.precise}}</div>
+    <div><span>持久力: </span>{{hero.persistentce}}</div>
+    <div><span>描述: </span>{{hero.description}}</div>
     <div>
       <label>name:
         <input [(ngModel)]="hero.name" placeholder="name">

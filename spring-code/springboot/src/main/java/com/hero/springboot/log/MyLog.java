@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * MyLog
+ * 声明该方法是个切面方法
  */
 @Component
 @Aspect
@@ -20,6 +21,9 @@ public class MyLog {
 
     private Logger logger = LoggerFactory.getLogger(MyLog.class);
 
+    //标注切点 
+    //读作com.hero.springboot.controller包下所有类的所有方法的任何参数形式
+    //executeService为代理类 AOP的本质为动态代理，这里executeService()就是代理类
     @Pointcut("execution(public * com.hero.springboot.controller.*.*(..))")
     public void executeService(){};
 
