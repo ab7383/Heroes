@@ -16,13 +16,11 @@ public class HeroController
     @Autowired
     HeroService heroService;
 
-    private Logger logger = LoggerFactory.getLogger(HeroController.class);
 
     @CrossOrigin(origins = "*")
     @ResponseBody
     @GetMapping(path = "api/heroes")
     public List<Hero> getHeroes() throws Exception {
-        logger.info("-------------------getHeroes--------------------");
         return heroService.getHeroes();
     }
 
@@ -30,8 +28,6 @@ public class HeroController
     @ResponseBody
     @GetMapping(path = "api/heroes/{id}")
     public Hero getHero(@PathVariable("id") Integer id) throws Exception {
-        logger.info("-------------------getHero--------------------");
-        logger.info("hero's id is: " + id);
         return heroService.getHero(id);
     }
 
@@ -39,7 +35,6 @@ public class HeroController
     @ResponseBody
     @PutMapping(path = "api/heroes")
     public int updateHero(@RequestBody Hero hero) throws Exception {
-        logger.info("-------------------update Hero--------------------");
         return  heroService.updateHero(hero);
     }
 
@@ -47,7 +42,6 @@ public class HeroController
     @ResponseBody
     @PostMapping(path = "api/heroes")
     public int addHero(@RequestBody Hero hero) throws Exception {
-        logger.info("-------------------add Hero--------------------");
         return  heroService.addHero(hero);
     }
 
@@ -55,8 +49,6 @@ public class HeroController
     @ResponseBody
     @DeleteMapping(path = "api/heroes/{id}")
     public int deleteHero(@PathVariable("id") Integer id) throws Exception {
-        logger.info("-------------------delete Hero--------------------");
-        logger.info("hero's id is: " + id);
         return heroService.deleteHero(id);
     }
 }
