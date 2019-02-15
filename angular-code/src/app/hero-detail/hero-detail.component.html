@@ -9,7 +9,9 @@
     <div><span>成长性: </span>{{hero.growth}}</div>
     <div><span>精密度: </span>{{hero.precise}}</div>
     <div><span>持久力: </span>{{hero.persistentce}}</div>
+    <div echarts [options] = "options"></div>
     <div><span>描述: </span>{{hero.description}}</div>
+    
     <div>
       <label>name:
         <input [(ngModel)]="hero.name" placeholder="name">
